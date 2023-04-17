@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link href="{% static 'css/bootstrap.rtl.min.css'%}" rel="stylesheet">
+<!--    <meta name="description" content="{% block metadescription %}{% endblock %}">-->
+
+    <title></title>
+</head>
+<body>
+<div class="container">
+
+      <label for="course">Department</label>
+              <select class="form-select" id="course" onchange="coursefield()">
+                  <option selected>Choose Course</option>
+                  {% for i in course %}
+                    <option value="{{i.id}}"{% if request.GET.course == i.id|lower %} selected {% endif %}>
+                      {{i.name}}
+                    </option>
+                  {% endfor %}
+              </select>
+              <br>
+
+
+              <label for="department">Course</label>
+              <select class="form-select" id="department" >
+                  <option selected>Choose Department</option>
+                  {% for i in department %}
+                    <option value="{{i.id}}">
+                      {{i.name}}
+                     </option>
+                  {% endfor %}
+              </select>
+              <br>
+
+        <script src="{% static 'js/form.js' %}"></script>
+</div>
+
+
+
+</body>
+</html>

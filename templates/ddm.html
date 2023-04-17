@@ -1,0 +1,34 @@
+{% load static %}
+
+<div class="container" >
+
+        {% for d in dept %}
+            <a href="{{d.get_url}}"><img class="card-img-top my_image" src="{{d.image.url}}" alt="{{d.name}}"></a>
+        <h4>{{d.name}}</h4>
+</div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<div class="row my_prod_row_class">
+    <div class="mx_auto">
+        <p><a href="{% url 'newapp:department' %}">Home</a>| <a href="{{dept.course.get_url}}" >{{dept.course}}</a>|{{dept.name}}</p>
+    </div>
+<div  class="container">
+<br>
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+        <div style="min-width:18rem">
+            <img src="{{dept.image.url}}" alt="{{dept.name}}">
+        </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+        <div>
+            <h1  class="my_prod_title">{{dept.name}}</h1>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
